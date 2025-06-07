@@ -58,10 +58,10 @@ available, we have prepared a realistic data split:
 
 For now, download just the former one [from the Google Drive](https://drive.google.com/file/d/1_Y0LPWOTU3VnaS1t0HMDa9_G2MWtWBRp/view?usp=sharing),
 and put it in a `data` directory. You can also run:
-```commandline
+```bash
 mkdir -p data
 ```
-```commandline
+```bash
 wget \
     --no-check-certificate \
     "https://drive.google.com/uc?export=download&id=1_Y0LPWOTU3VnaS1t0HMDa9_G2MWtWBRp" \
@@ -72,6 +72,9 @@ Inspect the file by using the `ames_inspect_data.py` script. It is implemented w
 [click framework](https://click.palletsprojects.com/en/stable/), which is quite powerful
 and easy to use for implementing CLI applications.
 
+```bash
+uv run python ames_inspect_data.py --file-path data/ames_data_2006_2008.parquet 
+```
 Now, let's start tracking that file by adding it to DVC:
 ```commandline
 dvc add data/ames_data_2006_2008.parquet
